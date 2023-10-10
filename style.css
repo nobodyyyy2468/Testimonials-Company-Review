@@ -1,0 +1,207 @@
+:root {
+  --bg-violet: hsl(263, 55%, 52%);
+  --bg-dark-grey: hsl(217, 19%, 35%);
+  --bg-blackish-blue: hsl(219, 29%, 14%);
+  --bg-white: hsl(0, 0%, 100%);
+
+  --Light-gray: hsl(0, 0%, 81%);
+  --Light-grayish-blue: hsl(210, 46%, 95%);
+
+  --non-white-bg-text-grey: rgba(247, 243, 243, 0.3);
+  --white-bg-text-grey: rgb(158, 154, 154);
+
+  --browser-wide-width: 350px;
+  --browsernarrow-width: 160px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  font-family: sans-serif;
+}
+
+html,
+body {
+  background: var(--Light-grayish-blue);
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (min-width: 500px) {
+  main {
+    display: grid;
+    /* grid-template: repeat(5, 1fr) / 1fr; */
+    row-gap: 15px;
+    width: 80%;
+    height: auto;
+    min-height: calc(100% - 60px);
+    margin: 30px 0;
+  }
+  p {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .title {
+    font-size: 11px;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  main {
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    grid-template-areas:
+      "one one two"
+      "three four four"
+      "five five five";
+    padding: 60px 30px;
+    column-gap: 15px;
+    row-gap: 15px;
+    width: 80%;
+    height: auto;
+    min-height: calc(100% - 200px);
+  }
+  #card1 {
+    grid-area: one;
+  }
+  #card2 {
+    grid-area: two;
+  }
+  #card3 {
+    grid-area: three;
+  }
+  #card4 {
+    grid-area: four;
+  }
+  #card5 {
+    grid-area: five;
+  }
+  p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .title {
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  main {
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(4, 1fr);
+    grid-template-areas:
+      "one one two five"
+      "three four four five";
+    padding: 60px 30px;
+    column-gap: 15px;
+    row-gap: 15px;
+    width: 80%;
+    height: auto;
+    min-height: calc(100% - 1000px);
+  }
+  #card1 {
+    grid-area: one;
+  }
+  #card2 {
+    grid-area: two;
+  }
+  #card3 {
+    grid-area: three;
+  }
+  #card4 {
+    grid-area: four;
+  }
+  #card5 {
+    grid-area: five;
+  }
+  p {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+  .title {
+    font-size: 13px;
+  }
+}
+/*General Card Setting*/
+#card1 {
+  background-color: var(--bg-violet);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 10px;
+  color: var(--Light-gray);
+  flex-shrink: 3;
+}
+
+#card2 {
+  background-color: var(--bg-dark-grey);
+  border-radius: 10px;
+  color: var(--Light-gray);
+  flex-shrink: 2;
+}
+#card3 {
+  background-color: var(--bg-white);
+  border-radius: 10px;
+  color: var(--bg-dark-grey);
+  flex-shrink: 2;
+}
+#card4 {
+  background-color: var(--bg-blackish-blue);
+  border-radius: 10px;
+  color: var(--Light-gray);
+  flex-shrink: 3;
+}
+#card5 {
+  background-color: var(--bg-white);
+  border-radius: 10px;
+  color: var(--bg-dark-grey);
+  flex-shrink: 1;
+}
+/* <!-Card-->*/
+.card {
+  padding: 20px 30px;
+}
+
+#card1 .profile .profile-info .title,
+#card2 .profile .profile-info .title,
+#card4 .profile .profile-info .title,
+#card1 .details,
+#card2 .details,
+#card4 .details {
+  color: var(--non-white-bg-text-grey);
+}
+
+#card3 .profile .profile-info .title,
+#card5 .profile .profile-info .title,
+#card3 .details,
+#card5 .details {
+  color: rgb(158, 154, 154);
+}
+
+/* <!-Profile-->*/
+.profile {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  margin-bottom: 15px;
+}
+.profile-dp img {
+  border-radius: 50%;
+  border: 0.5px solid white;
+  width: 25px;
+}
+.author {
+  margin-bottom: 2px;
+}
+
+/* <!-Summary-->*/
+h2 {
+  font-size: 18px;
+}
+.summary {
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
